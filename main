@@ -1,0 +1,61 @@
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+import random
+
+your_choice = int(input("What do you choose? 0-rock, 1-paper, 2-scissors\n"))
+if your_choice != 0 and your_choice != 1 and your_choice != 2:
+    print("Invalid input. You lost!")
+else:
+    computer_choice = random.randint(0, 2)
+    tab = [rock, paper, scissors]
+
+    print(tab[your_choice])
+    print("Computer chose:")
+    print(tab[computer_choice])
+
+    if your_choice == 0:
+        if computer_choice == 1:
+            print("You lost")
+        elif computer_choice == 0:
+            print("It's a draw")
+        else:
+            print("Congratulations! You won")
+    elif your_choice == 1:
+        if computer_choice == 2:
+            print("You lost")
+        elif computer_choice == 1:
+            print("It's a draw")
+        else:
+            print("Congratulations! You won")
+    else:
+        if computer_choice == 0:
+            print("You lost")
+        elif computer_choice == 2:
+            print("It's a draw")
+        else:
+            print("Congratulations! You won")
